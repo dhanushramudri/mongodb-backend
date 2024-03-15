@@ -6,6 +6,17 @@
     <title>Document</title>
   </head>
   <body>
-    Hello
+    This is the frontend Page
+    <h3 id="h3"></h3>
+    <script>
+      fetch("http://localhost:5000")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("h3").innerHTML = data.message.toString();
+        })
+        .catch((err) => {
+          console.log("error is ", err);
+        });
+    </script>
   </body>
 </html>
